@@ -14,12 +14,12 @@ namespace Mahoujas.DomainObjectValidator
 
         public ValidationError(ValidationAttribute validatorAttribute)
         {
-            AttributeType = validatorAttribute.GetType();
+            ValidatorType = validatorAttribute.GetType();
             PropertyName = validatorAttribute.PropertyName;
             ErrorMessage = validatorAttribute.ErrorMessage;
         }
 
-        public Type AttributeType { get; set; }
+        public Type ValidatorType { get; set; }
         public string PropertyName { get; set; }
         public string ErrorMessage { get; set; }
 

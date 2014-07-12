@@ -16,7 +16,7 @@ namespace Mahoujas.DomainObjectValidator.Test
             };
             var errors = person.ValidateDomainObject();
             Assert.AreEqual(1,errors.Count());
-            Assert.AreEqual(true,errors.Any(e => e.AttributeType == typeof(StringIsNotEmptyAttribute)));
+            Assert.AreEqual(true,errors.Any(e => e.ValidatorType == typeof(StringIsNotEmptyAttribute)));
         }
 
         [TestMethod]
@@ -25,8 +25,8 @@ namespace Mahoujas.DomainObjectValidator.Test
             var person = new Person();
             var errors = person.ValidateDomainObject();
             Assert.AreEqual(2, errors.Count());
-            Assert.AreEqual(true, errors.Any(e => e.AttributeType == typeof(StringIsNotEmptyAttribute)));
-            Assert.AreEqual(true, errors.Any(e => e.AttributeType == typeof(PropertyIsNotNullAttribute)));
+            Assert.AreEqual(true, errors.Any(e => e.ValidatorType == typeof(StringIsNotEmptyAttribute)));
+            Assert.AreEqual(true, errors.Any(e => e.ValidatorType == typeof(PropertyIsNotNullAttribute)));
         }
 
 

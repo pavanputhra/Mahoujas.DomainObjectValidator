@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PropertyIsNotNullAttribute.cs" />
+    <Compile Include="SinglePropertyValidationAttribute.cs" />
     <Compile Include="StringIsNotEmptyAttribute.cs" />
     <Compile Include="ValidationError.cs" />
     <Compile Include="ValidationHelper.cs" />

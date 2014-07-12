@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mahoujas.DomainObjectValidator
 {
-    public class PropertyIsNotNullAttribute : ValidationAttribute
+    public class PropertyIsNotNullAttribute : SinglePropertyValidationAttribute
     {
         public PropertyIsNotNullAttribute()
         {
@@ -15,8 +15,6 @@ namespace Mahoujas.DomainObjectValidator
 
         public override ValidationError Validate(string propertyName, object value)
         {
-            base.Validate(propertyName, value);
-
             if (value == null)
             {
                 ErrorMessage = string.Format("Property {0} must not be null", PropertyName);

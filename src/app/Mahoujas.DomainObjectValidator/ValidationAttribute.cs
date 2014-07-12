@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace Mahoujas.DomainObjectValidator
@@ -17,9 +18,10 @@ namespace Mahoujas.DomainObjectValidator
 
         #endregion
 
-        public virtual ValidationError Validate(string propertyName,object value)
+        public virtual ValidationError Validate(PropertyInfo propertyInfo, object objectToBeValidated)
         {
-            PropertyName = PropertyName ?? propertyName;
+            PropertyName = PropertyName ?? propertyInfo.Name;
+            object value = propertyInfo.GetValue(objectToBeValidated);
             if (value != null && ConstraintType != null && ConstraintType != value.GetType())
             {
                 throw new NotSupportedException(

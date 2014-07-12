@@ -21,7 +21,7 @@ namespace Mahoujas.DomainObjectValidator
                 var attributes = property.GetCustomAttributes<ValidationAttribute>();
                 foreach (ValidationAttribute attribute in attributes)
                 {
-                    var validationError = attribute.Validate(property.Name, property.GetValue(objToBeValidated));
+                    var validationError = attribute.Validate(property, objToBeValidated);
                     if (validationError != null)
                     {
                         errors.Add(validationError);

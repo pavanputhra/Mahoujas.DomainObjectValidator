@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mahoujas.DomainObjectValidator
 {
-    public class StringIsNotEmptyAttribute: ValidationAttribute
+    public class StringIsNotEmptyAttribute: SinglePropertyValidationAttribute
     {
         public StringIsNotEmptyAttribute()
         {
@@ -15,8 +15,6 @@ namespace Mahoujas.DomainObjectValidator
 
         public override ValidationError Validate(string propertyName,object value)
         {
-            base.Validate(propertyName,value);
-
             var val = value as string;
 
             if (string.IsNullOrEmpty(val))

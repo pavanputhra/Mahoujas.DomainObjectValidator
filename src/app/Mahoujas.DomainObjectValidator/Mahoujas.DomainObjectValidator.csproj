@@ -37,9 +37,12 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CollectionMaxCountAttribute.cs" />
     <Compile Include="PropertyIsNotNullAttribute.cs" />
     <Compile Include="SinglePropertyValidationAttribute.cs" />
     <Compile Include="StringIsNotEmptyAttribute.cs" />
+    <Compile Include="StringMaxLengthAttribute.cs" />
+    <Compile Include="StringMinLengthAttribute.cs" />
     <Compile Include="ValidationError.cs" />
     <Compile Include="ValidationHelper.cs" />
     <Compile Include="ValidationAttribute.cs" />

@@ -52,6 +52,10 @@
   <ItemGroup>
     <Compile Include="StringIsNotEmptyTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringMaxLengthTest.cs" />
+    <Compile Include="StringMinLengthTest.cs" />
+    <Compile Include="PropertyIsNotNullTest.cs" />
+    <Compile Include="CollectionMaxCountTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\app\Mahoujas.DomainObjectValidator\Mahoujas.DomainObjectValidator.csproj">

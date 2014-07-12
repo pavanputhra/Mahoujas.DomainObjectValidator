@@ -22,7 +22,7 @@ namespace Mahoujas.DomainObjectValidator
         {
             PropertyName = PropertyName ?? propertyInfo.Name;
             object value = propertyInfo.GetValue(objectToBeValidated);
-            if (value != null && ConstraintType != null && ConstraintType != value.GetType())
+            if (value != null && ConstraintType != null && !ConstraintType.GetTypeInfo().IsAssignableFrom(value.GetType().GetTypeInfo()))
             {
                 throw new NotSupportedException(
                     string.Format("Attribute is not supported for type {0}. Use with type {1}", value.GetType(), ConstraintType.FullName));

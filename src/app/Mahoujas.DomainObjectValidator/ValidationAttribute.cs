@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace Mahoujas.DomainObjectValidator
 {
@@ -12,7 +11,7 @@ namespace Mahoujas.DomainObjectValidator
 
         #region Properties
 
-        public Type ConstraintType { get; protected set; }
+        public ICollection<Type> ConstraintTypes { get; protected set; }
         public string PropertyName { get; set; }
         public string ErrorMessage { get; set; }
 
@@ -22,10 +21,10 @@ namespace Mahoujas.DomainObjectValidator
         {
             PropertyName = PropertyName ?? propertyInfo.Name;
             object value = propertyInfo.GetValue(objectToBeValidated);
-            if (value != null && ConstraintType != null && !ConstraintType.GetTypeInfo().IsAssignableFrom(value.GetType().GetTypeInfo()))
+            if (value != null && ConstraintTypes != null && !ConstraintTypes.Any( c => c.GetTypeInfo().IsAssignableFrom(value.GetType().GetTypeInfo())))
             {
                 throw new NotSupportedException(
-                    string.Format("Attribute is not supported for type {0}. Use with type {1}", value.GetType(), ConstraintType.FullName));
+                    string.Format("Attribute is not supported for type {0}. Use with type(s) {1}", value.GetType(), ConstraintTypes));
             }
 
             return null;
@@ -35,7 +34,10 @@ namespace Mahoujas.DomainObjectValidator
 
         protected ValidationAttribute()
         {
-            ConstraintType = typeof (object);
+            ConstraintTypes = new List<Type>
+            {
+                typeof (object)
+            };
             PropertyName = "";
             ErrorMessage = "";
         }

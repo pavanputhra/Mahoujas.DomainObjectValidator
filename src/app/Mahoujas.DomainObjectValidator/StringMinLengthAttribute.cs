@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Mahoujas.DomainObjectValidator
 {
-    public class StringMinLengthAttribute : SinglePropertyValidationAttribute
+    public class StringMinLengthAttribute : StringValidatorAttribute
     {
         public StringMinLengthAttribute(int length)
         {
-            ConstraintType = typeof (string);
             Length = length < 0 ? 0 : length;
         }
 

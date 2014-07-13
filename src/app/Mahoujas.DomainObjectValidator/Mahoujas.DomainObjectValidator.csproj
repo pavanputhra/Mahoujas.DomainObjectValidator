@@ -43,6 +43,7 @@
     <Compile Include="StringIsNotEmptyAttribute.cs" />
     <Compile Include="StringMaxLengthAttribute.cs" />
     <Compile Include="StringMinLengthAttribute.cs" />
+    <Compile Include="StringValidatorAttribute.cs" />
     <Compile Include="ValidationError.cs" />
     <Compile Include="ValidationHelper.cs" />
     <Compile Include="ValidationAttribute.cs" />

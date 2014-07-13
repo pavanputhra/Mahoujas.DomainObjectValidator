@@ -10,7 +10,7 @@ namespace Mahoujas.DomainObjectValidator
     {
         public PropertyIsNotNullAttribute()
         {
-            ConstraintType = null;
+            ConstraintTypes = null;
         }
 
         public override ValidationError Validate(string propertyName, object value)

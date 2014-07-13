@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Mahoujas.DomainObjectValidator
 {
-    public class StringIsNotEmptyAttribute: SinglePropertyValidationAttribute
+    public class StringIsNotEmptyAttribute: StringValidatorAttribute
     {
-        public StringIsNotEmptyAttribute()
-        {
-            ConstraintType = typeof (string);
-        }
 
         public override ValidationError Validate(string propertyName,object value)
         {

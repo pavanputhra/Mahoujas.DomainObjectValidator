@@ -11,7 +11,10 @@ namespace Mahoujas.DomainObjectValidator
     {
         public CollectionMaxCountAttribute(int length)
         {
-            ConstraintType = typeof (ICollection);
+            ConstraintTypes = new List<Type>
+            {
+                typeof (ICollection)
+            };
             Length =length;
         }
 

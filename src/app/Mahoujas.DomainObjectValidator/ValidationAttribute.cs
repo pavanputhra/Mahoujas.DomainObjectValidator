@@ -39,8 +39,6 @@ namespace Mahoujas.DomainObjectValidator
             {
                 typeof (object)
             };
-            PropertyName = "";
-            ErrorMessage = "";
         }
 
         #endregion

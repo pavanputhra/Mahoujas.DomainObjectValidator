@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mahoujas.DomainObjectValidator
 {
-    public abstract class StringValidatorAttribute : SinglePropertyValidationAttribute
+    public abstract class StringValidatorAttribute : SinglePropertyOrCollectionValidationAttribute
     {
         protected StringValidatorAttribute()
         {

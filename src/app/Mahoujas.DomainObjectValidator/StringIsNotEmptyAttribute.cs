@@ -11,11 +11,11 @@ namespace Mahoujas.DomainObjectValidator
 
         public override ValidationError Validate(string propertyName,object value)
         {
-            var val = value as string;
+            var valString = value as string;
 
-            if (string.IsNullOrEmpty(val))
+            if (valString != null &&string.IsNullOrEmpty(valString))
             {
-                ErrorMessage = ErrorMessage ?? string.Format("Property {0} must not be empty", PropertyName);
+                ErrorMessage = ErrorMessage ?? string.Format("Property {0} must not be empty.", PropertyName);
                 return new ValidationError(this);
             }
 

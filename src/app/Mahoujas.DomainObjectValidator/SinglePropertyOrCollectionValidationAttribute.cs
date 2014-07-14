@@ -25,7 +25,7 @@ namespace Mahoujas.DomainObjectValidator
             {
                 foreach (var c in collection)
                 {
-                    var error = Validate(propertyInfo.Name, c);
+                    var error = Validate(c);
                     if (error != null)
                     {
                         return error;

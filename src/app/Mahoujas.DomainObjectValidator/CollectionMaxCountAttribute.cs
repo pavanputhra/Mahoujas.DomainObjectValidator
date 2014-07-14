@@ -18,7 +18,7 @@ namespace Mahoujas.DomainObjectValidator
             Length =length;
         }
 
-        public override ValidationError Validate(string propertyName, object value)
+        public override ValidationError Validate(object value)
         {
             var val = value as ICollection;
 

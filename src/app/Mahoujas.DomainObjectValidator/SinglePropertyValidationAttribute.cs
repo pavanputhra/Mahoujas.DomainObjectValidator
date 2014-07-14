@@ -13,10 +13,10 @@ namespace Mahoujas.DomainObjectValidator
         {
             base.Validate(propertyInfo, objectToBeValidated);
 
-            return Validate(propertyInfo.Name, propertyInfo.GetValue(objectToBeValidated));
+            return Validate(propertyInfo.GetValue(objectToBeValidated));
         }
 
-        public virtual ValidationError Validate(string propertyName, object value)
+        public virtual ValidationError Validate(object value)
         {
             throw new NotSupportedException("This class was ment to be abstract.");
         }

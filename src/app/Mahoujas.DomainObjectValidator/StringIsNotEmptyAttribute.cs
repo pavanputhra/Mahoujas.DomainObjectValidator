@@ -9,7 +9,7 @@ namespace Mahoujas.DomainObjectValidator
     public class StringIsNotEmptyAttribute: StringValidatorAttribute
     {
 
-        public override ValidationError Validate(string propertyName,object value)
+        public override ValidationError Validate(object value)
         {
             var valString = value as string;
 

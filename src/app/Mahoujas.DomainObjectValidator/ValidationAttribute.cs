@@ -14,6 +14,7 @@ namespace Mahoujas.DomainObjectValidator
         public ICollection<Type> ConstraintTypes { get; protected set; }
         public string PropertyName { get; set; }
         public string ErrorMessage { get; set; }
+        public string Category { get; set; }
 
         #endregion
 

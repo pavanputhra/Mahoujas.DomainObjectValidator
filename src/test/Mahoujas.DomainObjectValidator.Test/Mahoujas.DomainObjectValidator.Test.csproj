@@ -56,6 +56,7 @@
     <Compile Include="StringMinLengthTest.cs" />
     <Compile Include="PropertyIsNotNullTest.cs" />
     <Compile Include="CollectionMaxCountTest.cs" />
+    <Compile Include="NumberRangeTest.cs" />
     <Compile Include="ValidationHelperTest.cs" />
   </ItemGroup>
   <ItemGroup>

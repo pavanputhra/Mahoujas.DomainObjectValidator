@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mahoujas.DomainObjectValidator
 {
-    public abstract class SinglePropertyValidationAttribute : ValidationAttribute
+    public abstract class SinglePropertyValidationAttribute : ValidationAttribute,ISinglePropertyValidation
     {
         public override ValidationError Validate(PropertyInfo propertyInfo, object objectToBeValidated)
         {
@@ -18,7 +18,7 @@ namespace Mahoujas.DomainObjectValidator
 
         public virtual ValidationError Validate(object value)
         {
-            throw new NotSupportedException("This class was ment to be abstract.");
+            throw new NotSupportedException();
         }
     }
 }

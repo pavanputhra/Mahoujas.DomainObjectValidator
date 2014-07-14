@@ -8,16 +8,11 @@ using System.Threading.Tasks;
 
 namespace Mahoujas.DomainObjectValidator
 {
-    public class SinglePropertyOrCollectionValidationAttribute : SinglePropertyValidationAttribute
+    public class SinglePropertyOrCollectionValidationAttribute : ValidationAttribute,ISinglePropertyValidation
     {
         public override ValidationError Validate(PropertyInfo propertyInfo, object objectToBeValidated)
         {
-            var returnValue = base.Validate(propertyInfo, objectToBeValidated);
-
-            if (returnValue != null)
-            {
-                return returnValue;
-            }
+            base.Validate(propertyInfo, objectToBeValidated);
 
             var collection = propertyInfo.GetValue(objectToBeValidated) as ICollection;
 
@@ -32,8 +27,17 @@ namespace Mahoujas.DomainObjectValidator
                     }
                 }
             }
+            else
+            {
+                return Validate(propertyInfo.GetValue(objectToBeValidated));
+            }
 
             return null;
+        }
+
+        public virtual ValidationError Validate(object value)
+        {
+            throw new NotSupportedException();
         }
     }
 }

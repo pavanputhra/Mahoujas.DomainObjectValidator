@@ -23,6 +23,16 @@ namespace Mahoujas.DomainObjectValidator
                         errors.Add(validationError);
                     }
                 }
+                var recuressiveValidate = property.GetCustomAttribute<ValidateAttribute>();
+                if (recuressiveValidate != null)
+                {
+                    var rErrors = property.GetValue(objToBeValidated).ValidateDomainObject();
+                    if (rErrors != null)
+                    {
+                        errors.AddRange(rErrors);
+                    }
+                }
+
             }
 
             return errors;

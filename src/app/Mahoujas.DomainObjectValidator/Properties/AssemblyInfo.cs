@@ -7,11 +7,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Mahoujas.DomainObjectValidator")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("This library allows attribute based domain object validation. It can also be used in PCL.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Mahoujas")]
 [assembly: AssemblyProduct("Mahoujas.DomainObjectValidator")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("Copyright ©  2014 Pavan Kumar")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en")]

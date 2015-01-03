@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CollectionMaxCountAttribute.cs" />
+    <Compile Include="CollectionMinCountAttribute.cs" />
     <Compile Include="ISinglePropertyValidation.cs" />
     <Compile Include="NumberRangeAttribute.cs" />
     <Compile Include="PropertyIsNotNullAttribute.cs" />
